@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Licencias - Gráficos de Doble Eje</title>
     <style>
+        /* Variables de color consistentes */
         :root {
             --primary-color: #0984e3;
             --text-color: #2d3436;
@@ -38,14 +39,17 @@
             text-decoration: none; 
             color: var(--primary-color); 
             font-weight: 600;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
-        .back-link:hover { transform: translateX(-5px); }
+        .back-link:hover { 
+            transform: translateX(-5px); 
+            opacity: 0.8;
+        }
 
         h1 { 
             color: var(--text-color); 
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
@@ -53,27 +57,39 @@
         .update-date {
             color: #636e72;
             font-size: 0.9rem;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             display: block;
+            border-bottom: 2px solid var(--primary-color);
+            width: fit-content;
+            padding-bottom: 5px;
         }
 
         section { margin-bottom: 35px; }
 
         h2 { 
             color: var(--primary-color); 
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
             margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
+        p { margin-bottom: 15px; text-align: justify; }
+
+        /* Estilo específico para las tarjetas de licencias */
         .license-card {
-            background: #fff;
+            background: #ffffff;
             border: 1px solid var(--border-color);
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 15px;
+            transition: border-color 0.2s ease;
+        }
+
+        .license-card:hover {
+            border-color: var(--primary-color);
         }
 
         .lib-name {
@@ -81,6 +97,7 @@
             font-size: 1.1rem;
             display: block;
             color: #000;
+            margin-bottom: 4px;
         }
 
         .lib-meta {
@@ -88,19 +105,22 @@
             color: #636e72;
             margin-bottom: 10px;
             display: block;
+            font-style: italic;
         }
 
+        /* Caja para el texto legal largo */
         .apache-box {
             background: #f1f2f6;
             padding: 20px;
             border-radius: 8px;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
             font-size: 0.85rem;
             white-space: pre-wrap;
             color: #2f3542;
-            max-height: 400px;
+            max-height: 300px;
             overflow-y: auto;
             border: 1px solid #dfe4ea;
+            line-height: 1.4;
         }
 
         .contact-footer {
@@ -111,11 +131,16 @@
             font-size: 0.95rem;
         }
 
-        .email { color: var(--primary-color); font-weight: bold; }
+        .email { 
+            color: var(--primary-color); 
+            font-weight: bold; 
+            text-decoration: none;
+        }
 
         @media (max-width: 600px) {
             body { padding: 20px 15px; }
             .container { padding: 25px 20px; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -352,7 +377,7 @@
 
         <footer class="contact-footer">
             <p>¿Dudas sobre las bibliotecas utilizadas?</p>
-            <p>Contacto: <span class="email">walkerj01n.apps@gmail.com</span></p>
+            <p>Contacto: <a href="mailto:walkerj01n.apps@gmail.com" class="email">walkerj01n.apps@gmail.com</a></p>
         </footer>
     </div>
 
