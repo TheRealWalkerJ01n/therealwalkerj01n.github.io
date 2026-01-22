@@ -3,81 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walker_J01n | Developer</title>
+    <title>Walker_J01n | Desarrollador</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 600px; /* Reducido para que se vea más compacto */
-            margin: 0 auto;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
             padding: 2rem;
+            color: #333;
             text-align: center;
         }
-        h1 { 
-            color: #2d3436; 
-            margin-bottom: 5px; /* Menos espacio para el badge */
-        }
+        .header { margin-bottom: 3rem; }
+        h1 { margin-bottom: 5px; color: #2d3436; }
         .dev-badge {
-            display: inline-block;
-            background: #0984e3;
-            color: white;
-            font-size: 0.75rem;
-            padding: 2px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-            margin-bottom: 15px;
+            background: #0984e3; color: white; font-size: 0.7rem;
+            padding: 3px 12px; border-radius: 20px; text-transform: uppercase;
+            font-weight: bold; letter-spacing: 1px;
         }
-        .container { 
-            background: #f9f9f9; 
-            padding: 30px 20px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-            border-top: 4px solid #0984e3; /* Detalle de color superior */
+
+        /* Contenedor de Apps */
+        .apps-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        .links { 
-            margin-top: 30px; 
-            display: flex; 
-            justify-content: center; 
-            gap: 15px; 
-            flex-wrap: wrap; 
-        }
-        a { 
-            text-decoration: none; 
-            color: #0984e3; 
-            font-weight: bold; 
-            border: 1px solid #0984e3; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            transition: 0.3s; 
+
+        /* Tarjeta de App Individual */
+        .app-card {
             background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 280px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-top: 5px solid #0984e3;
         }
-        a:hover { 
-            background: #0984e3; 
-            color: white; 
+        .app-card:hover { transform: translateY(-10px); }
+
+        .app-icon {
+            width: 80px; height: 80px;
+            background: #dfe6e9;
+            border-radius: 18px;
+            margin: 0 auto 1rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+            overflow: hidden; /* Para cuando metas una imagen real */
         }
-        footer { 
-            margin-top: 50px; 
-            font-size: 0.8rem; 
-            color: #636e72; 
+        .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+        h2 { font-size: 1.25rem; margin: 10px 0; color: #2d3436; }
+
+        .doc-links { display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem; }
+        .doc-links a {
+            text-decoration: none;
+            color: #0984e3;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 8px;
+            border-radius: 6px;
+            background: #f1f7ff;
+            transition: 0.2s;
         }
+        .doc-links a:hover { background: #0984e3; color: white; }
+
+        .global-links { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #ddd; }
+        footer { margin-top: 4rem; font-size: 0.8rem; color: #b2bec3; }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="header">
         <h1>Walker_J01n</h1>
-        <div class="dev-badge">Independent Developer</div>
+        <span class="dev-badge">Desarrollador Independiente</span>
+    </div>
+
+    <div class="apps-grid">
         
-        <p>Documentación oficial y soporte para mis aplicaciones en Google Play Store.</p>
-        
-        <div class="links">
-            <a href="politica.html">Política de Privacidad</a>
-            <a href="terminos.html">Términos y Condiciones</a>
-            <a href="app-ads.txt">AdMob Ads.txt</a>
+        <div class="app-card">
+            <div class="app-icon">
+                📱
+            </div>
+            <h2>Nombre de tu App</h2>
+            <p style="font-size: 0.85rem; color: #636e72;">Breve descripción de lo que hace tu app genial.</p>
+            
+            <div class="doc-links">
+                <a href="politica-app1.html">Política de Privacidad</a>
+                <a href="terminos-app1.html">Términos de Uso</a>
+            </div>
         </div>
+        </div>
+
+    <div class="global-links">
+        <a href="app-ads.txt" style="color: #636e72; text-decoration: none; font-size: 0.8rem; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px;">
+            Verificación AdMob (ads.txt)
+        </a>
     </div>
 
     <footer>
