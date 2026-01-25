@@ -5,23 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walker_J01n | Desarrollador</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 2rem;
-            color: #333;
-            text-align: center;
-        }
-        .header { margin-bottom: 3rem; }
-        h1 { margin-bottom: 5px; color: #2d3436; }
-        .dev-badge {
-            background: #0984e3; color: white; font-size: 0.7rem;
-            padding: 3px 12px; border-radius: 20px; text-transform: uppercase;
-            font-weight: bold; letter-spacing: 1px;
+        /* 1. Definición de Variables de Color (Modo Luz y Oscuro) */
+        :root {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-secondary: #636e72;
+            --accent-color: #0984e3;
+            --link-bg: #f1f7ff;
+            --footer-text: #b2bec3;
+            --shadow: rgba(0,0,0,0.05);
         }
 
-        /* Contenedor de Apps */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #181a1b;
+                --card-bg: #242729;
+                --text-main: #e8e6e3;
+                --text-secondary: #b2aba1;
+                --accent-color: #3391ff;
+                --link-bg: #2a2e30;
+                --footer-text: #736b5e;
+                --shadow: rgba(0,0,0,0.3);
+            }
+        }
+
+        /* 2. Estilos Globales */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 2rem;
+            color: var(--text-main);
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .header { margin-bottom: 3rem; }
+        h1 { margin-bottom: 5px; color: var(--text-main); }
+        
+        .dev-badge {
+            background: var(--accent-color);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* 3. Contenedor de Apps */
         .apps-grid {
             display: flex;
             justify-content: center;
@@ -29,44 +63,73 @@
             flex-wrap: wrap;
             max-width: 1000px;
             margin: 0 auto;
+            align-items: stretch;
         }
 
-        /* Tarjeta de App Individual */
+        /* 4. Tarjeta de App Individual */
         .app-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 15px;
             padding: 1.5rem;
             width: 280px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border-top: 5px solid #0984e3;
+            box-shadow: 0 10px 20px var(--shadow);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-top: 5px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
         }
+        
         .app-card:hover { transform: translateY(-10px); }
 
         .app-icon {
-            width: 80px; height: 80px;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 1rem;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
-        .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+        .app-icon img { width: 100%; height: 100%; object-fit: contain; }
 
-        h2 { font-size: 1.25rem; margin: 10px 0; color: #2d3436; }
+        h2 { font-size: 1.25rem; margin: 10px 0; color: var(--text-main); }
+        
+        .app-description {
+            font-size: 0.85rem; 
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
 
-        .doc-links { display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem; }
+        /* 5. Enlaces de Documentación */
+        .doc-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: auto; /* Empuja los links al fondo */
+            padding-top: 1.5rem;
+        }
+        
         .doc-links a {
             text-decoration: none;
-            color: #0984e3;
+            color: var(--accent-color);
             font-size: 0.9rem;
             font-weight: 600;
             padding: 8px;
             border-radius: 6px;
-            background: #f1f7ff;
+            background: var(--link-bg);
             transition: 0.2s;
         }
-        .doc-links a:hover { background: #0984e3; color: white; }
+        
+        .doc-links a:hover {
+            background: var(--accent-color);
+            color: white;
+        }
 
-        footer { margin-top: 4rem; font-size: 0.8rem; color: #b2bec3; }
+        footer {
+            margin-top: 4rem;
+            font-size: 0.8rem;
+            color: var(--footer-text);
+        }
     </style>
 </head>
 <body>
@@ -80,10 +143,13 @@
         
         <div class="app-card">
             <div class="app-icon">
-                <img src="gdde-logo.png" alt="Icono de Gráficos de Doble Eje" style="width: 100%; height: 100%; object-fit: contain;">
+                <img src="gdde-logo.png" alt="Icono de Gráficos de Doble Eje">
             </div>
             <h2>Gráficos de Doble Eje</h2>
-            <p style="font-size: 0.85rem; color: #636e72;">Potente herramienta de visualización de datos y series numéricas. Organiza información en tablas dinámicas y genera gráficos lineales de alta precisión con múltiples ejes. Ideal para el análisis estadístico y la representación de datos personalizados en un entorno 100% local y privado.</p>
+            <p class="app-description">
+                Crea tablas dinámicas y gráficos lineales de forma intuitiva. 
+                Analiza variaciones históricas y porcentuales entre datos para un análisis estadístico sólido.
+            </p>
             
             <div class="doc-links">
                 <a href="gdde-privacy_policy.html">Política de Privacidad</a>
@@ -91,7 +157,8 @@
                 <a href="gdde-licenses.html">Licencias de Código Abierto</a>
             </div>
         </div>
-        </div>
+
+    </div>
 
     <footer>
         &copy; 2026 Walker_J01n. Todos los derechos reservados.
@@ -99,7 +166,3 @@
 
 </body>
 </html>
-
-
-
-
