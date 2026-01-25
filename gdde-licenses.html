@@ -9,9 +9,27 @@
         :root {
             --primary-color: #0984e3;
             --text-color: #2d3436;
+            --text-secondary: #636e72;
             --bg-color: #f9f9fb;
             --card-bg: #ffffff;
             --border-color: #e1e4e8;
+            --code-bg: #f1f2f6;
+            --code-text: #2f3542;
+            --shadow-opacity: 0.05;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #3391ff;
+                --text-color: #e8e6e3;
+                --text-secondary: #b2aba1;
+                --bg-color: #181a1b;
+                --card-bg: #242729;
+                --border-color: #3e4446;
+                --code-bg: #1c1e1f;
+                --code-text: #c8c3bc;
+                --shadow-opacity: 0.3;
+            }
         }
 
         body { 
@@ -22,13 +40,14 @@
             margin: 0 auto; 
             padding: 40px 20px; 
             background-color: var(--bg-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
             background: var(--card-bg);
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,var(--shadow-opacity));
             border: 1px solid var(--border-color);
         }
 
@@ -55,7 +74,7 @@
         }
 
         .update-date {
-            color: #636e72;
+            color: var(--text-secondary);
             font-size: 0.9rem;
             margin-bottom: 40px;
             display: block;
@@ -80,7 +99,7 @@
 
         /* Estilo específico para las tarjetas de licencias */
         .license-card {
-            background: #ffffff;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             padding: 20px;
             border-radius: 8px;
@@ -96,13 +115,13 @@
             font-weight: bold;
             font-size: 1.1rem;
             display: block;
-            color: #000;
+            color: var(--text-color);
             margin-bottom: 4px;
         }
 
         .lib-meta {
             font-size: 0.9rem;
-            color: #636e72;
+            color: var(--text-secondary);
             margin-bottom: 10px;
             display: block;
             font-style: italic;
@@ -110,16 +129,16 @@
 
         /* Caja para el texto legal largo */
         .apache-box {
-            background: #f1f2f6;
+            background: var(--code-bg);
             padding: 20px;
             border-radius: 8px;
             font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
             font-size: 0.85rem;
             white-space: pre-wrap;
-            color: #2f3542;
+            color: var(--code-text);
             max-height: 300px;
             overflow-y: auto;
-            border: 1px solid #dfe4ea;
+            border: 1px solid var(--border-color);
             line-height: 1.4;
         }
 
@@ -129,6 +148,7 @@
             border-top: 1px solid var(--border-color);
             text-align: center;
             font-size: 0.95rem;
+            color: var(--text-secondary);
         }
 
         .email { 
