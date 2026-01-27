@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walker_J01n | Desarrollador</title>
     <style>
-        /* 1. Definición de Variables de Color (Modo Luz y Oscuro) */
+        /* 1. Definición de Variables de Color */
         :root {
             --bg-color: #f0f2f5;
             --card-bg: #ffffff;
@@ -30,19 +30,34 @@
             }
         }
 
-        /* 2. Estilos Globales */
+        /* 2. Estilos Globales y Ajuste de Pantalla Completa (No Scroll) */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             margin: 0;
-            padding: 2rem;
+            padding: 1rem;
             color: var(--text-main);
             text-align: center;
             transition: background-color 0.3s ease, color 0.3s ease;
+            
+            /* Centrado Vertical Perfecto */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            overflow: hidden; /* Evita el scroll en pantallas estándar */
         }
 
-        .header { margin-bottom: 3rem; }
-        h1 { margin-bottom: 5px; color: var(--text-main); }
+        .header { margin-bottom: 1.5rem; }
+        
+        h1 { 
+            margin: 0; 
+            margin-bottom: 5px; 
+            color: var(--text-main); 
+            font-size: 2rem;
+        }
         
         .dev-badge {
             background: var(--accent-color);
@@ -63,14 +78,13 @@
             flex-wrap: wrap;
             max-width: 1000px;
             margin: 0 auto;
-            align-items: stretch;
         }
 
         /* 4. Tarjeta de App Individual */
         .app-card {
             background: var(--card-bg);
             border-radius: 15px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             width: 280px;
             box-shadow: 0 10px 20px var(--shadow);
             transition: transform 0.3s ease, background-color 0.3s ease;
@@ -79,12 +93,12 @@
             flex-direction: column;
         }
         
-        .app-card:hover { transform: translateY(-10px); }
+        .app-card:hover { transform: translateY(-5px); }
 
         .app-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -92,29 +106,30 @@
         }
         .app-icon img { width: 100%; height: 100%; object-fit: contain; }
 
-        h2 { font-size: 1.25rem; margin: 10px 0; color: var(--text-main); }
+        h2 { font-size: 1.2rem; margin: 8px 0; color: var(--text-main); }
         
         .app-description {
             font-size: 0.85rem; 
             color: var(--text-secondary);
             line-height: 1.4;
+            margin-bottom: 1rem;
         }
 
         /* 5. Enlaces de Documentación */
         .doc-links {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: auto; /* Empuja los links al fondo */
-            padding-top: 1.5rem;
+            gap: 8px;
+            margin-top: auto; 
+            padding-top: 1rem;
         }
         
         .doc-links a {
             text-decoration: none;
             color: var(--accent-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            padding: 8px;
+            padding: 7px;
             border-radius: 6px;
             background: var(--link-bg);
             transition: 0.2s;
@@ -126,39 +141,44 @@
         }
 
         footer {
-            margin-top: 4rem;
-            font-size: 0.8rem;
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
             color: var(--footer-text);
+        }
+
+        /* Ajuste para pantallas muy pequeñas */
+        @media (max-height: 600px) {
+            body { overflow-y: auto; padding: 2rem 1rem; }
+            .header { margin-bottom: 1rem; }
+            footer { margin-top: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
+    <header class="header">
         <h1>Walker_J01n</h1>
         <span class="dev-badge">Desarrollador Independiente</span>
-    </div>
+    </header>
 
-    <div class="apps-grid">
-        
-        <div class="app-card">
+    <main class="apps-grid">
+        <article class="app-card">
             <div class="app-icon">
                 <img src="gdde-logo.png" alt="Icono de Gráficos de Doble Eje">
             </div>
             <h2>Gráficos de Doble Eje</h2>
-<p class="app-description">
-    Crea múltiples tablas y visualízalas como gráficos lineales de forma intuitiva. 
-    Analiza variaciones totales o secuenciales entre datos para un análisis estadístico sólido y exporta tus resultados con total autonomía.
-</p>
+            <p class="app-description">
+                Crea múltiples tablas y visualízalas como gráficos lineales de forma intuitiva. 
+                Analiza variaciones totales o secuenciales entre datos para un análisis estadístico sólido y exporta tus resultados con total autonomía.
+            </p>
             
-            <div class="doc-links">
+            <nav class="doc-links">
                 <a href="gdde-privacy_policy.html">Política de Privacidad</a>
                 <a href="gdde-terms_conditions.html">Términos y Condiciones</a>
                 <a href="gdde-licenses.html">Licencias de Código Abierto</a>
-            </div>
-        </div>
-
-    </div>
+            </nav>
+        </article>
+    </main>
 
     <footer>
         &copy; 2026 Walker_J01n. Todos los derechos reservados.
@@ -166,4 +186,3 @@
 
 </body>
 </html>
-
