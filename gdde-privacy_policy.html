@@ -90,13 +90,9 @@
             letter-spacing: 1px;
         }
 
-        /* Cambiado a variable para modo oscuro */
         h3 { color: var(--text-color); font-size: 1.1rem; margin-top: 20px; }
-
         p { margin-bottom: 15px; text-align: justify; }
-
         ul { margin-bottom: 20px; padding-left: 20px; }
-        
         li { margin-bottom: 8px; }
 
         .highlight-box {
@@ -133,7 +129,7 @@
         <header>
             <h1>Política de Privacidad</h1>
             <p><strong>Gráficos de Doble Eje</strong></p>
-            <span class="update-date">Última Actualización: 22 de enero de 2026</span>
+            <span class="update-date">Última Actualización: 27 de enero de 2026</span>
         </header>
 
         <section>
@@ -142,23 +138,23 @@
             
             <div class="highlight-box">
                 <h3>A. Modalidad sin Publicidad (Versión de Pago)</h3>
-                <p>La aplicación deshabilita por completo la inicialización y ejecución de servicios de publicidad. El código omite la carga de anuncios y no realiza peticiones de red a servidores externos.</p>
+                <p>La aplicación deshabilita por completo la inicialización y ejecución de servicios de publicidad. El código omite la carga de anuncios y no realiza peticiones de red para fines de rastreo o marketing, operando de forma aislada para la gestión de sus datos locales.</p>
             </div>
 
             <div class="highlight-box">
                 <h3>B. Modalidad con Publicidad (Versión Gratuita)</h3>
-                <p>Se utiliza Google AdMob cumpliendo con normativas <strong>GDPR y LGPD</strong> mediante el Marco de Transparencia de Google (CMP/UMP). El usuario puede:</p>
+                <p>Se utiliza Google AdMob cumpliendo con normativas <strong>GDPR y LGPD</strong>. En esta modalidad, AdMob puede recopilar identificadores de dispositivo (ID de publicidad) para personalización y análisis. El formulario de consentimiento (CMP/UMP), disponible según los requerimientos de la ubicación geográfica del usuario, permite:</p>
                 <ul>
-                    <li>Consentir o rechazar el uso de cookies y datos personales.</li>
+                    <li>Consentir o rechazar el uso de identificadores y procesamiento de datos personales.</li>
                     <li>Gestionar preferencias de privacidad antes de la carga de anuncios.</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>2. Gestión de Datos y Exportación</h2>
+            <h2>2. Gestión de Datos y Seguridad Financiera</h2>
             <ul>
-                <li><strong>Privacidad de Contenido:</strong> El desarrollador no tiene acceso a sus datos, títulos o configuraciones. No hay sincronización con servidores externos.</li>
+                <li><strong>Privacidad de Contenido:</strong> El desarrollador no tiene acceso a sus datos, títulos o configuraciones. La aplicación <strong>no solicita, recopila ni transmite</strong> números de cuentas bancarias, credenciales de acceso financiero o números de tarjetas de crédito.</li>
                 <li><strong>Exportación Local:</strong> Los archivos JSON e imágenes (PNG) se gestionan vía APIs nativas, otorgando control total al usuario sobre la ubicación de sus archivos.</li>
                 <li><strong>Persistencia:</strong> La desinstalación elimina permanentemente la base de datos interna (Room Persistence Library).</li>
             </ul>
@@ -168,19 +164,19 @@
             <h2>3. Acceso a Archivos y Conectividad</h2>
             <ul>
                 <li><strong>Archivos:</strong> No se requiere acceso global al almacenamiento; se utiliza el selector nativo del sistema.</li>
-                <li><strong>Red:</strong> Uso exclusivo para anuncios y gestión de consentimiento en la versión gratuita.</li>
+                <li><strong>Red:</strong> Uso exclusivo para la validación de licencias, anuncios y gestión de consentimiento en la versión gratuita.</li>
             </ul>
         </section>
 
         <section>
             <h2>4. Transparencia Técnica</h2>
-            <p>Implementamos el SDK de <strong>User Messaging Platform (UMP)</strong> de Google. En la modalidad de pago, el flujo lógico neutraliza cualquier solicitud de red publicitaria, garantizando una experiencia 100% aislada.</p>
+            <p>Implementamos el SDK de <strong>User Messaging Platform (UMP)</strong> de Google. En la modalidad de pago, el flujo lógico neutraliza cualquier solicitud de red publicitaria, garantizando una experiencia aislada de servicios de rastreo comercial.</p>
         </section>
 
         <section>
             <h2>5. Procesamiento de Pagos y Permisos</h2>
             <p>Para la gestión de compras digitales, utilizamos la <strong>Google Play Billing Library</strong>. No recopilamos ni almacenamos datos financieros; todas las transacciones son procesadas de forma segura por Google Play.</p>
-            <p>La aplicación requiere permisos específicos (como <code>BILLING</code>, <code>INTERNET</code> y <code>AD_ID</code>) para validar licencias de pago, habilitar el uso de la herramienta sin interrupciones publicitarias y, en la versión gratuita, administrar la publicidad conforme a las políticas de Google.</p>
+            <p>La aplicación requiere permisos específicos (como <code>BILLING</code>, <code>INTERNET</code> y <code>AD_ID</code>) para validar licencias de pago e identificar de forma anónima al usuario para fines publicitarios <strong>exclusivamente en la versión gratuita</strong>, conforme a las políticas de Google.</p>
         </section>
         
         <footer class="contact-footer">
